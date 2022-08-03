@@ -1,0 +1,4 @@
+gym[all]
+gym
+stable-baselines3[extra]
+tensorboard
