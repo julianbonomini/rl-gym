@@ -11,12 +11,12 @@ log_path = os.path.join('training', 'logs', 'Breakout')
 env = make_atari_env(env_name, n_envs=4, seed=0)
 env = VecFrameStack(env, n_stack=4)
 
-a2c_path = os.path.join('training', 'saved_models', 'Breakout', 'A2C_Breakout_6m')
+a2c_path = os.path.join('training', 'saved_models', 'Breakout', 'A2C_Breakout_10m')
 model = A2C.load(a2c_path, env)
 # model = A2C('CnnPolicy', env, verbose=1, tensorboard_log=log_path)
 
 
-model.learn(total_timesteps=4000000)
+model.learn(total_timesteps=15000000)
 
-a2c_path = os.path.join('training', 'saved_models', 'Breakout', 'A2C_Asteroids_10m')
+a2c_path = os.path.join('training', 'saved_models', 'Breakout', 'A2C_Breakout_25m')
 model.save(a2c_path)
